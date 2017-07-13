@@ -16,4 +16,6 @@ public interface IUserService {
     ServiceResponse<String> resetPassword(User user,String passwordOld,String passwordNew);
     ServiceResponse<User> updateInformation(User user);
     ServiceResponse<User> getInformation(Integer userId);
+    public ServiceResponse checkAdminRole(User user);
+
 }
