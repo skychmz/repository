@@ -1,8 +1,7 @@
 package com.eshop.controller.backend;
 
 import com.eshop.common.Const;
-import com.eshop.common.ResponseCode;
-import com.eshop.common.ServiceResponse;
+import com.eshop.common.ServerResponse;
 import com.eshop.pojo.User;
 import com.eshop.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +22,15 @@ public class UserManageController {
     private IUserService iUserService;
     @RequestMapping(value = "login.do",method= RequestMethod.POST)
     @ResponseBody
-    public ServiceResponse<User> login(String username, String password, HttpSession session){
-        ServiceResponse<User> response=iUserService.login(username,password);
+    public ServerResponse<User> login(String username, String password, HttpSession session){
+        ServerResponse<User> response=iUserService.login(username,password);
         if (response.isSuccess()){
             User user=response.getData();
             if(user.getRole()== Const.Role.ROLE_ADMIN){
                 session.setAttribute(Const.CURRENT_USER,user);
                 return response;
             }else{
-                return ServiceResponse.createByErrorMessage("不是管理员，无法登录");
+                return ServerResponse.createByErrorMessage("不是管理员，无法登录");
             }
         }
         return response;

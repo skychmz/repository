@@ -1,6 +1,6 @@
 package com.eshop.service.impl;
 
-import com.eshop.common.ServiceResponse;
+import com.eshop.common.ServerResponse;
 import com.eshop.dao.CategoryMapper;
 import com.eshop.pojo.Category;
 import com.eshop.service.ICategoryService;
@@ -24,9 +24,9 @@ public class CategoryServiceImpl implements ICategoryService {
     private Logger logger= LoggerFactory.getLogger(CategoryServiceImpl.class);
     @Autowired
     private CategoryMapper categoryMapper;
-    public ServiceResponse addCategory(String categoryName,Integer parentId){
+    public ServerResponse addCategory(String categoryName, Integer parentId){
         if(parentId==null|| StringUtils.isBlank(categoryName)){
-            return ServiceResponse.createByErrorMessage("添加品类参数错误");
+            return ServerResponse.createByErrorMessage("添加品类参数错误");
         }
         Category category=new Category();
         category.setName(categoryName);
@@ -35,14 +35,14 @@ public class CategoryServiceImpl implements ICategoryService {
 
         int rowCount=categoryMapper.insert(category);
         if(rowCount>0){
-            return ServiceResponse.createBySuccess("添加品类成功");
+            return ServerResponse.createBySuccess("添加品类成功");
         }
-        return ServiceResponse.createByErrorMessage("添加品类失败");
+        return ServerResponse.createByErrorMessage("添加品类失败");
     }
 
-    public ServiceResponse updateCategoryName(Integer categoryId,String categoryName){
+    public ServerResponse updateCategoryName(Integer categoryId, String categoryName){
         if(categoryId==null|| StringUtils.isBlank(categoryName)){
-            return ServiceResponse.createByErrorMessage("更新品类参数错误");
+            return ServerResponse.createByErrorMessage("更新品类参数错误");
         }
         Category category=new Category();
         category.setId(categoryId);
@@ -50,20 +50,20 @@ public class CategoryServiceImpl implements ICategoryService {
 
         int rowCount=categoryMapper.updateByPrimaryKeySelective(category);
         if(rowCount>0){
-            return ServiceResponse.createBySuccess("更新品类成功");
+            return ServerResponse.createBySuccess("更新品类成功");
         }
-        return ServiceResponse.createByErrorMessage("更新品类失败");
+        return ServerResponse.createByErrorMessage("更新品类失败");
     }
 
-    public ServiceResponse<List<Category>> getChildrenParallelCategory(Integer categoryId){
+    public ServerResponse<List<Category>> getChildrenParallelCategory(Integer categoryId){
         List<Category> categoryList=categoryMapper.selectCategoryChildrenByParentId(categoryId);
         if(CollectionUtils.isEmpty(categoryList)){
             logger.info("未找到当前分类的子分类");
         }
-        return ServiceResponse.createBySuccess(categoryList);
+        return ServerResponse.createBySuccess(categoryList);
     }
 
-    public ServiceResponse selectCategoryAndChildrenById(Integer categoryId){
+    public ServerResponse selectCategoryAndChildrenById(Integer categoryId){
         Set<Category> categorySet= Sets.newHashSet();
         findChildCategory(categorySet,categoryId);
         List<Integer> categoryIdList= Lists.newArrayList();
@@ -72,7 +72,7 @@ public class CategoryServiceImpl implements ICategoryService {
                 categoryIdList.add(category.getId());
             }
         }
-        return ServiceResponse.createBySuccess(categoryIdList);
+        return ServerResponse.createBySuccess(categoryIdList);
     }
 
     private Set<Category> findChildCategory(Set<Category> categorySet,Integer categoryId){
@@ -87,5 +87,9 @@ public class CategoryServiceImpl implements ICategoryService {
         return categorySet;
 
     }
+
+
+
+
 
 }

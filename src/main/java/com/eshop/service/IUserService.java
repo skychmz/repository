@@ -1,21 +1,21 @@
 package com.eshop.service;
 
-import com.eshop.common.ServiceResponse;
+import com.eshop.common.ServerResponse;
 import com.eshop.pojo.User;
 
 /**
  * Created by ed on 2017/7/9.
  */
 public interface IUserService {
-    ServiceResponse<User> login(String username, String password);
-    ServiceResponse<String> register(User user);
-    ServiceResponse<String> checkValid(String str,String type);
-    ServiceResponse<String> selectQuestion(String username);
-    ServiceResponse<String> checkAnswer(String username,String question,String answer);
-    ServiceResponse<String> forgetResetPassword(String username,String passwordNew,String forgetToken);
-    ServiceResponse<String> resetPassword(User user,String passwordOld,String passwordNew);
-    ServiceResponse<User> updateInformation(User user);
-    ServiceResponse<User> getInformation(Integer userId);
-    public ServiceResponse checkAdminRole(User user);
+    ServerResponse<User> login(String username, String password);
+    ServerResponse<String> register(User user);
+    ServerResponse<String> checkValid(String str, String type);
+    ServerResponse<String> selectQuestion(String username);
+    ServerResponse<String> checkAnswer(String username, String question, String answer);
+    ServerResponse<String> forgetResetPassword(String username, String passwordNew, String forgetToken);
+    ServerResponse<String> resetPassword(User user, String passwordOld, String passwordNew);
+    ServerResponse<User> updateInformation(User user);
+    ServerResponse<User> getInformation(Integer userId);
+    public ServerResponse checkAdminRole(User user);
 
 }
