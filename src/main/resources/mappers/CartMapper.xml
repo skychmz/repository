@@ -130,7 +130,7 @@
     WHERE user_id=#{userId}
   </select>
 
-  <select id="selectCartProductCheckedStatusByUserId" resultType="int" parameterType="int ">
+  <select id="selectCartProductCheckedStatusByUserId" resultType="int" parameterType="int">
     SELECT count(1) FROM eshop_cart
     WHERE checked=0
     AND user_id=#{userId}
@@ -140,6 +140,7 @@
     DELETE from eshop_cart
     WHERE user_id=#{userId}
     <if test="productIdList!=null">
+      AND product_id IN
       <foreach collection="productIdList" item="item" index="index" open="(" separator="," close=")">
         #{item}
       </foreach>

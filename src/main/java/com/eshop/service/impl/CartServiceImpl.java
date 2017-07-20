@@ -111,6 +111,7 @@ public class CartServiceImpl implements ICartService {
 
         if(CollectionUtils.isNotEmpty(cartList)){
             for(Cart cartItem : cartList){
+                System.out.println(cartItem.getProductId());
                 CartProductVo cartProductVo = new CartProductVo();
                 cartProductVo.setId(cartItem.getId());
                 cartProductVo.setUserId(userId);
@@ -118,6 +119,7 @@ public class CartServiceImpl implements ICartService {
 
                 Product product = productMapper.selectByPrimaryKey(cartItem.getProductId());
                 if(product != null){
+                    System.out.println("!!!!!!!!!!!!!!!!!!");
                     cartProductVo.setProductMainImage(product.getMainImage());
                     cartProductVo.setProductName(product.getName());
                     cartProductVo.setProductSubtitle(product.getSubtitle());
@@ -141,6 +143,7 @@ public class CartServiceImpl implements ICartService {
                     }
                     cartProductVo.setQuantity(buyLimitCount);
                     //计算总价
+                    System.out.println(BigDecimalUtil.mul(product.getPrice().doubleValue(),cartProductVo.getQuantity()));
                     cartProductVo.setProductTotalPrice(BigDecimalUtil.mul(product.getPrice().doubleValue(),cartProductVo.getQuantity()));
                     cartProductVo.setProductChecked(cartItem.getChecked());
                 }

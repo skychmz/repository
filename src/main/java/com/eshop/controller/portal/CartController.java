@@ -5,7 +5,6 @@ import com.eshop.common.ResponseCode;
 import com.eshop.common.ServerResponse;
 import com.eshop.pojo.User;
 import com.eshop.service.ICartService;
-import com.eshop.service.ICategoryService;
 import com.eshop.vo.CartVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.util.Collections;
 
 /**
  * Created by ed on 2017/7/18.
