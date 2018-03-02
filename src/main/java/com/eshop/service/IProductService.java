@@ -5,9 +5,7 @@ import com.eshop.pojo.Product;
 import com.eshop.vo.ProductDetailVo;
 import com.github.pagehelper.PageInfo;
 
-/**
- * Created by ed on 2017/7/14.
- */
+
 public interface IProductService {
     ServerResponse saveOrUpdateProduct(Product product);
     ServerResponse<String> setSaleStatus(Integer productId, Integer status);

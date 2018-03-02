@@ -4,9 +4,7 @@ import com.eshop.common.ServerResponse;
 import com.eshop.pojo.Shipping;
 import com.github.pagehelper.PageInfo;
 
-/**
- * Created by ed on 2017/7/20.
- */
+
 public interface IShippingService {
 
     ServerResponse add(Integer userId, Shipping shipping);

@@ -13,9 +13,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.UUID;
 
-/**
- * Created by ed on 2017/7/16.
- */
+
 @Service("iFileService")
 public class FileServiceImpl implements IFileService {
 

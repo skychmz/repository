@@ -2,9 +2,6 @@ package com.eshop.vo;
 
 import java.math.BigDecimal;
 
-/**
- * Created by geely
- */
 public class ProductListVo {
 
     private Integer id;

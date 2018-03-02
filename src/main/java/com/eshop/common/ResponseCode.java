@@ -1,8 +1,6 @@
 package com.eshop.common;
 
-/**
- * Created by ed on 2017/7/9.
- */
+
 public enum ResponseCode {
     SUCCESS(0,"SUCCESS"),
     ERROR(1,"ERROR"),

@@ -1,8 +1,6 @@
 package com.eshop.vo;
 
-/**
- * Created by geely
- */
+
 public class ShippingVo {
     private String receiverName;
 

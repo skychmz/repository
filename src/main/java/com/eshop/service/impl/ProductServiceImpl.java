@@ -23,9 +23,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by ed on 2017/7/14.
- */
+
 @Service("iProductService")
 public class ProductServiceImpl implements IProductService {
     @Autowired

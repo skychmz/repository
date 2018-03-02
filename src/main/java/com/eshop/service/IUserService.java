@@ -3,9 +3,7 @@ package com.eshop.service;
 import com.eshop.common.ServerResponse;
 import com.eshop.pojo.User;
 
-/**
- * Created by ed on 2017/7/9.
- */
+
 public interface IUserService {
     ServerResponse<User> login(String username, String password);
     ServerResponse<String> register(User user);

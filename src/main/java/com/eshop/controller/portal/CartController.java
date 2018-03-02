@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
-/**
- * Created by ed on 2017/7/18.
- */
 @Controller
-@RequestMapping("/car/")
+@RequestMapping("/cart/")
 public class CartController {
     @Autowired
     private ICartService iCartService;

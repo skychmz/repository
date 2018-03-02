@@ -16,9 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by ed on 2017/7/13.
- */
+
 @Service("iCategoryService")
 public class CategoryServiceImpl implements ICategoryService {
     private Logger logger= LoggerFactory.getLogger(CategoryServiceImpl.class);
