@@ -3,24 +3,30 @@ package com.eshop.service.impl;
 import com.eshop.common.Const;
 import com.eshop.common.ResponseCode;
 import com.eshop.common.ServerResponse;
-import com.eshop.dao.CategoryMapper;
-import com.eshop.dao.ProductMapper;
+import com.eshop.dao.*;
 import com.eshop.pojo.Category;
+import com.eshop.pojo.Comment;
 import com.eshop.pojo.Product;
+import com.eshop.pojo.User;
 import com.eshop.service.ICategoryService;
 import com.eshop.service.IProductService;
 import com.eshop.util.DateTimeUtil;
+import com.eshop.util.MD5Util;
 import com.eshop.util.PropertiesUtil;
+import com.eshop.vo.CommentVO;
+import com.eshop.vo.OrderVo;
 import com.eshop.vo.ProductDetailVo;
 import com.eshop.vo.ProductListVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -31,6 +37,12 @@ public class ProductServiceImpl implements IProductService {
 
     @Autowired
     private CategoryMapper categoryMapper;
+    @Autowired
+    private CommentMapper commentMapper;
+    @Autowired
+    private UserMapper userMapper;
+    @Autowired
+    private OrderItemMapper orderItemMapper;
 
     @Autowired
     private ICategoryService iCategoryService;
@@ -211,5 +223,37 @@ public class ProductServiceImpl implements IProductService {
         PageInfo pageInfo = new PageInfo(productList);
         pageInfo.setList(productListVoList);
         return ServerResponse.createBySuccess(pageInfo);
+    }
+    public ServerResponse<String> addComment(String text, Integer userId, Integer productId){
+        String commentText=' '+text;
+        Comment comment=new Comment();
+        comment.setComment(commentText);
+        comment.setUserId(userId);
+        comment.setProductId(productId);
+        int resultCount=commentMapper.insert(comment);
+        if(resultCount==0){
+            return ServerResponse.createByErrorMessage("评论失败");
+        }
+        return ServerResponse.createBySuccessMessage("评论成功");
+    }
+    public ServerResponse<PageInfo> getCommentList(Integer productId,int pageNum, int pageSize){
+        PageHelper.startPage(pageNum,pageSize);
+        List<Comment> commentList=commentMapper.selectByProductId(productId);
+        List<CommentVO> CommentVoList=assembleCommentVoList(commentList);
+        PageInfo pageResult = new PageInfo(commentList);
+        pageResult.setList(CommentVoList);
+        return ServerResponse.createBySuccess(pageResult);
+    }
+
+    private List<CommentVO> assembleCommentVoList(List<Comment> commentList){
+        List<CommentVO> CommentVoList = Lists.newArrayList();
+        for(Comment comment : commentList){
+            String username=userMapper.selectByPrimaryKey(comment.getUserId()).getUsername();
+            String commentText=comment.getComment();
+            String createTime=DateTimeUtil.dateToStr(comment.getCreateTime(),"yyyy-MM-dd HH:mm:ss");
+            CommentVO commentVO=new CommentVO(username,commentText,createTime);
+            CommentVoList.add(commentVO);
+        }
+        return CommentVoList;
     }
 }

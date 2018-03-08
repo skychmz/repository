@@ -1,9 +1,4 @@
-/*
-* @Author: Rosen
-* @Date:   2017-05-18 19:30:20
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-23 20:03:49
-*/
+
 /* 通用头部导航 */
 
 .header .logo{
@@ -67,12 +62,7 @@
     .crumb{
     font-size: 35px;
 }
-}/*
-* @Author: Rosen
-* @Date:   2017-05-17 14:16:54
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-17 16:31:15
-*/
+}
 .nav{
     background: #eee;
     height: 30px;

@@ -1,9 +1,9 @@
-webpackJsonp([7],{
+webpackJsonp([8],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(75);
+	module.exports = __webpack_require__(79);
 
 
 /***/ }),
@@ -11,12 +11,7 @@ webpackJsonp([7],{
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-18 19:30:12
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-27 19:46:42
-	*/
+	
 
 	'use strict';
 	__webpack_require__(3);
@@ -76,12 +71,7 @@ webpackJsonp([7],{
 /***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-17 14:17:01
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-22 12:21:05
-	*/
+	
 
 	'use strict';
 	__webpack_require__(13);
@@ -146,13 +136,6 @@ webpackJsonp([7],{
 
 /***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: WillGiab
-	* @Date:   2017-06-14 00:40:04
-	* @Last Modified by:   WillGiab
-	* @Last Modified time: 2017-06-14 11:43:26
-	*/
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -276,13 +259,6 @@ webpackJsonp([7],{
 /***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: 0284
-	* @Date:   2017-06-14 11:46:02
-	* @Last Modified by:   0284
-	* @Last Modified time: 2017-06-14 11:50:09
-	*/
-
 	'use strict';
 	var _mm = __webpack_require__(8);
 
@@ -376,19 +352,13 @@ webpackJsonp([7],{
 
 /***/ }),
 
-/***/ 47:
+/***/ 51:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-19 17:39:14
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-24 16:46:02
-	*/
 	'use strict';
-	__webpack_require__(48);
+	__webpack_require__(52);
 	var _mm             = __webpack_require__(8);
-	var templateIndex   = __webpack_require__(50);
+	var templateIndex   = __webpack_require__(54);
 	// 侧边导航
 	var navSide = {
 	    option : {
@@ -426,26 +396,22 @@ webpackJsonp([7],{
 
 /***/ }),
 
-/***/ 48:
+/***/ 52:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 50:
+/***/ 54:
 /***/ (function(module, exports) {
 
 	module.exports = "{{#navList}}\n{{#isActive}}\n<li class=\"nav-item active\">\n{{/isActive}}\n{{^isActive}}\n<li class=\"nav-item\">\n{{/isActive}}\n    <a class=\"link\" href=\"{{href}}\">{{desc}}</a>\n</li>\n{{/navList}}";
 
 /***/ }),
 
-/***/ 68:
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/**
-	 * Created by weimin on 2017/7/13 0013.
-	 */
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -504,21 +470,18 @@ webpackJsonp([7],{
 
 /***/ }),
 
-/***/ 75:
+/***/ 79:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/**
-	 * Created by weimin on 2017/7/13 0013.
-	 */
-
+	
 	'use strict';
-	__webpack_require__(76);
+	__webpack_require__(80);
 	__webpack_require__(12);
 	__webpack_require__(2);
-	var navSide         = __webpack_require__(47);
+	var navSide         = __webpack_require__(51);
 	var _mm             = __webpack_require__(8);
-	var _order          = __webpack_require__(68);
-	var templateIndex   = __webpack_require__(78);
+	var _order          = __webpack_require__(72);
+	var templateIndex   = __webpack_require__(82);
 
 	var page = {
 	    data           : {
@@ -547,6 +510,7 @@ webpackJsonp([7],{
 	            }
 	        });
 	    },
+
 	    // 加载订单 数据
 	    loadPaymentInfo: function () {
 	        var _this         = this,
@@ -566,6 +530,8 @@ webpackJsonp([7],{
 	    dataFilter : function(data){
 	        data.needPay        = data.status == 10;
 	        data.isCancelable   = data.status == 10;
+	        data.isPayed        = data.status == 20;
+
 	    }
 	};
 	$(function () {
@@ -574,17 +540,17 @@ webpackJsonp([7],{
 
 /***/ }),
 
-/***/ 76:
+/***/ 80:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 78:
+/***/ 82:
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"panel\">\n    <div class=\"panel-title\">订单信息</div>\n    <div class=\"panel-body\">\n        <div class=\"order-info\">\n            <div class=\"text-line\">\n                <span class=\"text\">订单号：{{orderNo}}</span>\n                <span class=\"text\">创建时间：{{createTime}}</span>\n            </div>\n            <div class=\"text-line\">\n                <span class=\"text\">\n                    收件人：\n                    {{receiverName}}\n                    {{shippingVo.receiverProvince}}\n                    {{shippingVo.receiverCity}}\n                    {{shippingVo.receiverAddress}}\n                    {{shippingVo.receiverMobile}}\n                </span>\n            </div>\n            <div class=\"text-line\">\n                <span class=\"text\">订单状态： {{statusDesc}}</span>\n            </div>\n            <div class=\"text-line\">\n                <span class=\"text\">支付方式：{{paymentTypeDesc}}</span>\n            </div>\n            <div class=\"text-line\">\n                {{#needPay}}\n                <a class=\"btn\" href=\"./payment.html?orderNumber={{orderNo}}\">去支付</a>\n                {{/needPay}}\n                {{#isCancelable}}\n                <a class=\"btn order-cancel\">取消订单</a>\n                {{/isCancelable}}\n            </div>\n        </div>\n    </div>\n</div>\n<div class=\"panel\">\n    <div class=\"panel-title\">商品清单</div>\n    <div class=\"panel-body\">\n        <table class=\"product-table\">\n            <tr>\n                <th class=\"cell-th cell-img\">&nbsp;</th>\n                <th class=\"cell-th cell-info\">商品信息</th>\n                <th class=\"cell-th cell-price\">单价</th>\n                <th class=\"cell-th cell-count\">数量</th>\n                <th class=\"cell-th cell-total\">小计</th>\n            </tr>\n            {{#orderItemVoList}}\n            <tr>\n                <td class=\"cell cell-img\">\n                    <a href=\"./detail.html?productId={{productId}}\" target=\"_blank\">\n                        <img class=\"p-img\" src=\"{{imageHost}}{{productImage}}\" alt=\"{{productName}}\" />\n                    </a>\n                </td>\n                <td class=\"cell cell-info\">\n                    <a class=\"link\" href=\"./detail.html?productId={{productId}}\" target=\"_blank\">{{productName}}</a>\n                </td>\n                <td class=\"cell cell-price\">￥{{currentUnitPrice}}</td>\n                <td class=\"cell cell-count\">{{quantity}}</td>\n                <td class=\"cell cell-total\">￥{{totalPrice}}</td>\n            </tr>\n            {{/orderItemVoList}}\n        </table>\n        <p class=\"total\">\n            <span>订单总价：</span>\n            <span class=\"total-price\">￥{{payment}}</span>\n        </p>\n    </div>\n</div>";
+	module.exports = "<div class=\"panel\">\n    <div class=\"panel-title\">订单信息</div>\n    <div class=\"panel-body\">\n        <div class=\"order-info\">\n            <div class=\"text-line\">\n                <span class=\"text\">订单号：{{orderNo}}</span>\n                <span class=\"text\">创建时间：{{createTime}}</span>\n            </div>\n            <div class=\"text-line\">\n                <span class=\"text\">\n                    收件人：\n                    {{receiverName}}\n                    {{shippingVo.receiverProvince}}\n                    {{shippingVo.receiverCity}}\n                    {{shippingVo.receiverAddress}}\n                    {{shippingVo.receiverMobile}}\n                </span>\n            </div>\n            <div class=\"text-line\">\n                <span class=\"text\">订单状态： {{statusDesc}}</span>\n            </div>\n            <div class=\"text-line\">\n                <span class=\"text\">支付方式：{{paymentTypeDesc}}</span>\n            </div>\n            <div class=\"text-line\">\n                {{#needPay}}\n                <a class=\"btn\" href=\"./payment.html?orderNumber={{orderNo}}\">去支付</a>\n                {{/needPay}}\n                {{#isCancelable}}\n                <a class=\"btn order-cancel\">取消订单</a>\n                {{/isCancelable}}\n            </div>\n        </div>\n    </div>\n</div>\n<div class=\"panel\">\n    <div class=\"panel-title\">商品清单</div>\n    <div class=\"panel-body\">\n        <table class=\"product-table\">\n            <tr>\n                <th class=\"cell-th cell-img\">&nbsp;</th>\n                <th class=\"cell-th cell-info\">商品信息</th>\n                <th class=\"cell-th cell-price\">单价</th>\n                <th class=\"cell-th cell-count\">数量</th>\n                <th class=\"cell-th cell-total\">小计</th>\n            </tr>\n            {{#orderItemVoList}}\n            <tr>\n                <td class=\"cell cell-img\">\n                    <a href=\"./detail.html?productId={{productId}}\" target=\"_blank\">\n                        <img class=\"p-img\" src=\"{{imageHost}}{{productImage}}\" alt=\"{{productName}}\" />\n                    </a>\n                </td>\n                <td class=\"cell cell-info\">\n                    <a class=\"link\" href=\"./detail.html?productId={{productId}}\" target=\"_blank\">{{productName}}</a>\n                    {{#isPayed}}\n                        <a href=\"./comment-add.html?productId={{productId}}\" target=\"_blank\">去评价>></a>\n                    {{/isPayed}}\n                </td>\n                <td class=\"cell cell-price\">￥{{currentUnitPrice}}</td>\n                <td class=\"cell cell-count\">{{quantity}}</td>\n                <td class=\"cell cell-total\">￥{{totalPrice}}</td>\n            </tr>\n            {{/orderItemVoList}}\n        </table>\n        <p class=\"total\">\n        \n            <span>订单总价：</span>\n            <span class=\"total-price\">￥{{payment}}</span>\n        </p>\n    </div>\n</div>";
 
 /***/ })
 

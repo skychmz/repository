@@ -1,8 +1,8 @@
-webpackJsonp([5],[
+webpackJsonp([2],[
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(44);
+	module.exports = __webpack_require__(21);
 
 
 /***/ }),
@@ -358,177 +358,131 @@ webpackJsonp([5],[
 /* 18 */,
 /* 19 */,
 /* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	__webpack_require__(45);
+	__webpack_require__(22);
 	__webpack_require__(12);
 	__webpack_require__(2);
-	__webpack_require__(47);
-	var navSide         = __webpack_require__(51);
-	var templateBanner  = __webpack_require__(55);
-	var _mm             = __webpack_require__(8);
+	var _mm = __webpack_require__(8);
+	var _product = __webpack_require__(24);
+	var templateIndex   = __webpack_require__(25);
 
-	$(function() {
-	    // 渲染banner的html
-	    var bannerHtml  = _mm.renderHtml(templateBanner);
-	    $('.banner-con').html(bannerHtml);
-	    // 初始化banner
-	    var $slider     = $('.banner').unslider({
-	        dots: true
-	    });
-	    // 前一张和后一张操作的事件绑定
-	    $('.banner-con .banner-arrow').click(function(){
-	        var forward = $(this).hasClass('prev') ? 'prev' : 'next';
-	        $slider.data('unslider')[forward]();
-	    });
+	var page = {
+	    init: function(){
+	        this.loadDetail();
+	        this.bindEvent();
+	    },
+	    bindEvent : function(){
+	        var _this = this;
+	         $(document).on('click', '#submit', function(){
+	            _this.submit();
+	         });
+
+	    },
+	    // 提交
+	    submit : function(){
+	        var commentData = {
+	                text : $.trim($('.comment-text').val()),
+	                productId : _mm.getUrlParam('productId')
+	            };
+	            if(commentData.text.length!=0){
+	            _product.addComment(commentData, function(res){
+	                window.location.href = './result.html?type=comment-add&productId=' + commentData.productId;
+	            }, function(errMsg){
+	                _mm.errorTips(errMsg);
+	            });}
+	            else{
+	                _mm.errorTips('请输入内容！');
+	            }
+	    },
+
+	    // 加载商品数据
+	    loadDetail : function(){
+	        var _this       = this,
+	            html        = '',
+	            $pageWrap   = $('.page-wrap');
+	            var productId=_mm.getUrlParam('productId');
+	        // 请求detail信息
+	        _product.getProductDetail(productId, function(res){
+	            // render
+	            html = _mm.renderHtml(templateIndex, res);
+	            $pageWrap.html(html);
+	        }, function(errMsg){
+	            $pageWrap.html('<p class="err-tip">此商品找不到了</p>');
+	        });
+	    },
+	    
+	};
+	$(function(){
+	    page.init();
 	});
 
-
 /***/ }),
-/* 45 */
+/* 22 */
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 46 */,
-/* 47 */
+/* 23 */,
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(48);
-	__webpack_require__(50);
+	var _mm = __webpack_require__(8);
 
-/***/ }),
-/* 48 */
-/***/ (function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 49 */,
-/* 50 */
-/***/ (function(module, exports) {
-
-	window.console&&console.warn("This version of Unslider is due to be deprecated by December 1. Please visit unslider.com for details on how to upgrade."),function(t,s){if(!t)return s;var i=function(){this.el=s,this.items=s,this.sizes=[],this.max=[0,0],this.current=0,this.interval=s,this.opts={speed:500,delay:3e3,complete:s,keys:!s,dots:s,fluid:s};var i=this;this.init=function(s,i){return this.el=s,this.ul=s.children("ul"),this.max=[s.outerWidth(),s.outerHeight()],this.items=this.ul.children("li").each(this.calculate),this.opts=t.extend(this.opts,i),this.setup(),this},this.calculate=function(s){var e=t(this),n=e.outerWidth(),h=e.outerHeight();i.sizes[s]=[n,h],n>i.max[0]&&(i.max[0]=n),h>i.max[1]&&(i.max[1]=h)},this.setup=function(){if(this.el.css({overflow:"hidden",width:i.max[0],height:this.items.first().outerHeight()}),this.ul.css({width:100*this.items.length+"%",position:"relative"}),this.items.css("width",100/this.items.length+"%"),this.opts.delay!==s&&(this.start(),this.el.hover(this.stop,this.start)),this.opts.keys&&t(document).keydown(this.keys),this.opts.dots&&this.dots(),this.opts.fluid){var e=function(){i.el.css("width",Math.min(Math.round(i.el.outerWidth()/i.el.parent().outerWidth()*100),100)+"%")};e(),t(window).resize(e)}this.opts.arrows&&this.el.parent().append('<p class="arrows"><span class="prev">芒鈥犅�</span><span class="next">芒鈥犫€�</span></p>').find(".arrows span").click(function(){t.isFunction(i[this.className])&&i[this.className]()}),t.event.swipe&&this.el.on("swipeleft",i.prev).on("swiperight",i.next)},this.move=function(s,e){this.items.eq(s).length||(s=0),0>s&&(s=this.items.length-1);var n=this.items.eq(s),h={height:n.outerHeight()},o=e?5:this.opts.speed;this.ul.is(":animated")||(i.el.find(".dot:eq("+s+")").addClass("active").siblings().removeClass("active"),this.el.animate(h,o)&&this.ul.animate(t.extend({left:"-"+s+"00%"},h),o,function(){i.current=s,t.isFunction(i.opts.complete)&&!e&&i.opts.complete(i.el)}))},this.start=function(){i.interval=setInterval(function(){i.move(i.current+1)},i.opts.delay)},this.stop=function(){return i.interval=clearInterval(i.interval),i},this.keys=function(s){var e=s.which,n={37:i.prev,39:i.next,27:i.stop};t.isFunction(n[e])&&n[e]()},this.next=function(){return i.stop().move(i.current+1)},this.prev=function(){return i.stop().move(i.current-1)},this.dots=function(){var s='<ol class="dots">';t.each(this.items,function(t){s+='<li class="dot'+(1>t?" active":"")+'">'+(t+1)+"</li>"}),s+="</ol>",this.el.addClass("has-dots").append(s).find(".dot").click(function(){i.move(t(this).index())})}};t.fn.unslider=function(s){var e=this.length;return this.each(function(n){var h=t(this),o=(new i).init(h,s);h.data("unslider"+(e>1?"-"+(n+1):""),o)})}}(window.jQuery,!1);
-
-/***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	__webpack_require__(52);
-	var _mm             = __webpack_require__(8);
-	var templateIndex   = __webpack_require__(54);
-	// 侧边导航
-	var navSide = {
-	    option : {
-	        name : '',
-	        navList : [
-	            {name : 'user-center', desc : '个人中心', href: './user-center.html'},
-	            {name : 'order-list', desc : '我的订单', href: './order-list.html'},
-	            {name : 'user-pass-update', desc : '修改密码', href: './user-pass-update.html'},
-	            {name : 'about', desc : '关于eshop', href: './about.html'}
-	        ]
-	    },
-	    init : function(option){
-	        // 合并选项
-	        $.extend(this.option, option);
-	        this.renderNav();
-	    },
-	    // 渲染导航菜单
-	    renderNav : function(){
-	        // 计算active数据
-	        for(var i = 0, iLength = this.option.navList.length; i < iLength; i++){
-	            if(this.option.navList[i].name === this.option.name){
-	                this.option.navList[i].isActive = true;
-	            }
-	        };
-	        // 渲染list数据
-	        var navHtml = _mm.renderHtml(templateIndex, {
-	            navList : this.option.navList
+	var _product = {
+	    // 获取商品列表
+	    getProductList : function(listParam, resolve, reject){
+	        _mm.request({
+	            url     : _mm.getServerUrl('/product/list.do'),
+	            data    : listParam,
+	            success : resolve,
+	            error   : reject
 	        });
-	        // 把html放入容器
-	        $('.nav-side').html(navHtml);
-	    }
+	    },
+	    // 获取商品详细信息
+	    getProductDetail : function(productId, resolve, reject){
+	        _mm.request({
+	            url     : _mm.getServerUrl('/product/detail.do'),
+	            data    : {
+	                productId : productId
+	            },
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
+	    // 获取商品详细信息
+	    getCommentList : function(productId, resolve, reject){
+	        _mm.request({
+	            url     : _mm.getServerUrl('/product/commentList.do'),
+	            data    : {
+	                productId : productId
+	            },
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
+	    // 提交评价
+	    addComment : function(commentInfo, resolve, reject){
+	        _mm.request({
+	            url     : _mm.getServerUrl('/product/addComment.do'),
+	            data    : commentInfo,
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
 	};
-
-	module.exports = navSide;
+	module.exports = _product;
 
 /***/ }),
-/* 52 */
+/* 25 */
 /***/ (function(module, exports) {
 
-	// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 53 */,
-/* 54 */
-/***/ (function(module, exports) {
-
-	module.exports = "{{#navList}}\n{{#isActive}}\n<li class=\"nav-item active\">\n{{/isActive}}\n{{^isActive}}\n<li class=\"nav-item\">\n{{/isActive}}\n    <a class=\"link\" href=\"{{href}}\">{{desc}}</a>\n</li>\n{{/navList}}";
-
-/***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = "<div class=\"banner\">\n    <ul>\n        <li>\n            <a href=\"./list.html?categoryId=100006\" target=\"_blank\">\n                <img class=\"banner-img\" src=\"" + __webpack_require__(56) + "\" />\n            </a>\n        </li>\n        <li>\n            <a href=\"./list.html?categoryId=100011\" target=\"_blank\">\n                <img class=\"banner-img\" src=\"" + __webpack_require__(57) + "\" />\n            </a>\n        </li>\n        <li>\n            <a href=\"./list.html?categoryId=100016\" target=\"_blank\">\n                <img class=\"banner-img\" src=\"" + __webpack_require__(58) + "\" />\n            </a>\n        </li>\n        <li>\n            <a href=\"./list.html?categoryId=100021\" target=\"_blank\">\n                <img class=\"banner-img\" src=\"" + __webpack_require__(59) + "\" />\n            </a>\n        </li>\n        <li>\n            <a href=\"./list.html?categoryId=100026\" target=\"_blank\">\n                <img class=\"banner-img\" src=\"" + __webpack_require__(60) + "\" />\n            </a>\n        </li>\n    </ul>\n    <div class=\"banner-arrow prev\">\n        <i class=\"fa fa-angle-left\"></i>\n    </div>\n    <div class=\"banner-arrow next\">\n        <i class=\"fa fa-angle-right\"></i>\n    </div>\n</div>";
-
-/***/ }),
-/* 56 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "resource/banner1.jpg";
-
-/***/ }),
-/* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "resource/banner2.jpg";
-
-/***/ }),
-/* 58 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "resource/banner3.jpg";
-
-/***/ }),
-/* 59 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "resource/banner4.jpg";
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "resource/banner5.jpg";
+	module.exports = "<div class=\"product-info\">                \r\n           <a class=\"link\" href=\"./detail.html?productId={{productId}}\" target=\"_blank\">{{name}}</a><br/>请写出您对该商品的评价:\r\n           </br>\r\n            <textarea class=\"comment-text\" id=\"comment\" rows=\"5\" cols=\"40\"></textarea>\r\n            </br><a class=\"btn btn-submit\" id=\"submit\">提交</a>\r\n</div>";
 
 /***/ })
 ]);

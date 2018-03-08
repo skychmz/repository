@@ -1,9 +1,4 @@
-/*
-* @Author: Rosen
-* @Date:   2017-05-18 19:30:20
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-23 20:03:49
-*/
+
 /* 通用头部导航 */
 
 .header .logo{
@@ -67,12 +62,7 @@
     .crumb{
     font-size: 35px;
 }
-}/*
-* @Author: Rosen
-* @Date:   2017-05-17 14:16:54
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-17 16:31:15
-*/
+}
 .nav{
     background: #eee;
     height: 30px;
@@ -106,12 +96,7 @@
     display: inline-block;
     margin-left: 5px;
 }
-/*
-* @Author: Rosen
-* @Date:   2017-05-30 16:51:30
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-06-02 11:38:22
-*/
+
 
  .cart-table{
     width: 100%;
@@ -212,7 +197,7 @@
 }
 .cart-footer .submit-con .submit-total{
     font-size: 18px;
-    color: #c60023;
+    color: #6495ed;
     font-weight: bold;
     margin-right: 30px;
     vertical-align: middle;
@@ -250,5 +235,14 @@
     width: 150px;
     height: 70px;
     font-size: 40px;
+}
+.cart-table .cell-count .count-input {
+    width: 60px;
+    height: 35px;
+    font-size: 30px;
+}
+.cart-table .cell-count .count-btn {
+    width: 35px;
+    height: 35px;
 }
 }

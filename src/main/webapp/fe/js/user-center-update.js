@@ -1,9 +1,9 @@
-webpackJsonp([12],{
+webpackJsonp([13],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(98);
+	module.exports = __webpack_require__(102);
 
 
 /***/ }),
@@ -11,12 +11,7 @@ webpackJsonp([12],{
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-18 19:30:12
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-27 19:46:42
-	*/
+	
 
 	'use strict';
 	__webpack_require__(3);
@@ -76,12 +71,7 @@ webpackJsonp([12],{
 /***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-17 14:17:01
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-22 12:21:05
-	*/
+	
 
 	'use strict';
 	__webpack_require__(13);
@@ -146,13 +136,6 @@ webpackJsonp([12],{
 
 /***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: WillGiab
-	* @Date:   2017-06-14 00:40:04
-	* @Last Modified by:   WillGiab
-	* @Last Modified time: 2017-06-14 11:43:26
-	*/
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -276,13 +259,6 @@ webpackJsonp([12],{
 /***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: 0284
-	* @Date:   2017-06-14 11:46:02
-	* @Last Modified by:   0284
-	* @Last Modified time: 2017-06-14 11:50:09
-	*/
-
 	'use strict';
 	var _mm = __webpack_require__(8);
 
@@ -376,19 +352,13 @@ webpackJsonp([12],{
 
 /***/ }),
 
-/***/ 47:
+/***/ 51:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-19 17:39:14
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-24 16:46:02
-	*/
 	'use strict';
-	__webpack_require__(48);
+	__webpack_require__(52);
 	var _mm             = __webpack_require__(8);
-	var templateIndex   = __webpack_require__(50);
+	var templateIndex   = __webpack_require__(54);
 	// 侧边导航
 	var navSide = {
 	    option : {
@@ -426,37 +396,31 @@ webpackJsonp([12],{
 
 /***/ }),
 
-/***/ 48:
+/***/ 52:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 50:
+/***/ 54:
 /***/ (function(module, exports) {
 
 	module.exports = "{{#navList}}\n{{#isActive}}\n<li class=\"nav-item active\">\n{{/isActive}}\n{{^isActive}}\n<li class=\"nav-item\">\n{{/isActive}}\n    <a class=\"link\" href=\"{{href}}\">{{desc}}</a>\n</li>\n{{/navList}}";
 
 /***/ }),
 
-/***/ 98:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-23 19:52:16
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-23 23:40:04
-	*/
 	'use strict';
-	__webpack_require__(99);
+	__webpack_require__(103);
 	__webpack_require__(12);
 	__webpack_require__(2);
-	var navSide         = __webpack_require__(47);
+	var navSide         = __webpack_require__(51);
 	var _mm             = __webpack_require__(8);
 	var _user           = __webpack_require__(15);
-	var templateIndex   = __webpack_require__(101);
+	var templateIndex   = __webpack_require__(105);
 
 	// page 逻辑部分
 	var page = {
@@ -545,14 +509,14 @@ webpackJsonp([12],{
 
 /***/ }),
 
-/***/ 99:
+/***/ 103:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 101:
+/***/ 105:
 /***/ (function(module, exports) {
 
 	module.exports = "<div class=\"user-info\">\n    <div class=\"form-line\">\n        <span class=\"label\">用户名：</span>\n        <span class=\"text\">{{username}}</span>\n    </div>\n    <div class=\"form-line\">\n        <span class=\"label\">电 话：</span>\n        <input class=\"input\" id=\"phone\" autocomplete=\"off\" value=\"{{phone}}\" />\n    </div>\n    <div class=\"form-line\">\n        <span class=\"label\">邮 箱：</span>\n        <input class=\"input\" id=\"email\" autocomplete=\"off\" value=\"{{email}}\" />\n    </div>\n    <div class=\"form-line\">\n        <span class=\"label\">问 题：</span>\n        <input class=\"input\" id=\"question\" autocomplete=\"off\" value=\"{{question}}\" />\n    </div>\n    <div class=\"form-line\">\n        <span class=\"label\">答 案：</span>\n        <input class=\"input\" id=\"answer\" autocomplete=\"off\" value=\"{{answer}}\" />\n    </div>\n    <span class=\"btn btn-submit\">提交</span>\n</div>";

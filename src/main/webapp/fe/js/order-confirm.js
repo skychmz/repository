@@ -1,9 +1,9 @@
-webpackJsonp([6],{
+webpackJsonp([7],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(65);
+	module.exports = __webpack_require__(69);
 
 
 /***/ }),
@@ -11,12 +11,7 @@ webpackJsonp([6],{
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-18 19:30:12
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-27 19:46:42
-	*/
+	
 
 	'use strict';
 	__webpack_require__(3);
@@ -76,12 +71,7 @@ webpackJsonp([6],{
 /***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-17 14:17:01
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-22 12:21:05
-	*/
+	
 
 	'use strict';
 	__webpack_require__(13);
@@ -146,13 +136,6 @@ webpackJsonp([6],{
 
 /***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: WillGiab
-	* @Date:   2017-06-14 00:40:04
-	* @Last Modified by:   WillGiab
-	* @Last Modified time: 2017-06-14 11:43:26
-	*/
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -276,13 +259,6 @@ webpackJsonp([6],{
 /***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: 0284
-	* @Date:   2017-06-14 11:46:02
-	* @Last Modified by:   0284
-	* @Last Modified time: 2017-06-14 11:50:09
-	*/
-
 	'use strict';
 	var _mm = __webpack_require__(8);
 
@@ -376,20 +352,20 @@ webpackJsonp([6],{
 
 /***/ }),
 
-/***/ 65:
+/***/ 69:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(66);
+	__webpack_require__(70);
 	__webpack_require__(2);
 	__webpack_require__(12);
 	var _mm             = __webpack_require__(8);
-	var _order          = __webpack_require__(68);
-	var _address        = __webpack_require__(69);
-	var templateAddress = __webpack_require__(70);
-	var templateProduct = __webpack_require__(71);
-	var addressModal    = __webpack_require__(72);
+	var _order          = __webpack_require__(72);
+	var _address        = __webpack_require__(73);
+	var templateAddress = __webpack_require__(74);
+	var templateProduct = __webpack_require__(75);
+	var addressModal    = __webpack_require__(76);
 
 	var page = {
 	    data           : {
@@ -512,19 +488,15 @@ webpackJsonp([6],{
 
 /***/ }),
 
-/***/ 66:
+/***/ 70:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 68:
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/**
-	 * Created by weimin on 2017/7/13 0013.
-	 */
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -583,12 +555,8 @@ webpackJsonp([6],{
 
 /***/ }),
 
-/***/ 69:
+/***/ 73:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/**
-	 * Created by weimin on 2017/7/13 0013.
-	 */
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -650,32 +618,28 @@ webpackJsonp([6],{
 
 /***/ }),
 
-/***/ 70:
+/***/ 74:
 /***/ (function(module, exports) {
 
 	module.exports = "{{#list}}\r\n{{#isActive}}\r\n<div class=\"address-item active\" data-id=\"{{id}}\">\r\n{{/isActive}}\r\n{{^isActive}}\r\n<div class=\"address-item\" data-id=\"{{id}}\">\r\n{{/isActive}}\r\n    <div class=\"address-title\">\r\n        {{receiverCity}} {{receiverProvince}} （ {{receiverName}} 收 ）\r\n    </div>\r\n    <div class=\"address-detail\">\r\n        {{receiverAddress}} {{receiverPhone}}\r\n    </div>\r\n    <div class=\"address-opera\">\r\n        <span class=\"link address-update\">编辑</span>\r\n        <span class=\"link address-delete\">删除</span>\r\n    </div>\r\n</div>\r\n{{/list}}\r\n<div class=\"address-add\">\r\n    <div class=\"address-new\">\r\n        <i class=\"fa fa-plus\"></i>\r\n        <div class=\"text\">使用新地址</div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 
-/***/ 71:
+/***/ 75:
 /***/ (function(module, exports) {
 
 	module.exports = "<table class=\"product-table\">\r\n    <tr>\r\n        <th class=\"cell-img\">&nbsp;</th>\r\n        <th class=\"cell-info\">商品描述</th>\r\n        <th class=\"cell-price\">价格</th>\r\n        <th class=\"cell-count\">数量</th>\r\n        <th class=\"cell-total\">小计</th>\r\n    </tr>\r\n    {{#orderItemVoList}}\r\n    <tr>\r\n        <td class=\"cell-img\">\r\n            <a href=\"./detail.html?productId={{productId}}\" target=\"_blank\">\r\n                <img class=\"p-img\"\r\n                     src=\"{{imageHost}}{{productImage}}\"\r\n                     alt=\"{{productName}}\"/>\r\n            </a>\r\n        </td>\r\n        <td class=\"cell-info\">\r\n            <a href=\"./detail.html?productId={{productId}}\" class=\"link\">{{productName}}</a>\r\n        </td>\r\n        <td class=\"cell-price\">￥{{currentUnitPrice}}</td>\r\n        <td class=\"cell-count\">{{quantity}}</td>\r\n        <td class=\"cell-total\">￥{{totalPrice}}</td>\r\n    </tr>\r\n    {{/orderItemVoList}}\r\n</table>\r\n<div class=\"submit-con\">\r\n    <span>订单总价:</span>\r\n    <span class=\"submit-total\">￥{{productTotalPrice}}</span>\r\n    <span class=\"btn order-submit\">提交订单</span>\r\n</div>";
 
 /***/ }),
 
-/***/ 72:
+/***/ 76:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/**
-	 * Created by weimin on 2017/7/13 0013.
-	 */
 
 	'use strict';
 	var _mm                  = __webpack_require__(8);
-	var _cities              = __webpack_require__(73);
-	var _address             = __webpack_require__(69);
-	var templateAddressModal = __webpack_require__(74);
+	var _cities              = __webpack_require__(77);
+	var _address             = __webpack_require__(73);
+	var templateAddressModal = __webpack_require__(78);
 
 	var addressModal = {
 	    show           : function (option) {
@@ -815,15 +779,8 @@ webpackJsonp([6],{
 
 /***/ }),
 
-/***/ 73:
+/***/ 77:
 /***/ (function(module, exports) {
-
-	/*
-	* @Author: Rosen
-	* @Date:   2017-06-08 08:45:41
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-06-08 08:51:07
-	*/
 
 	'use strict';
 
@@ -882,7 +839,7 @@ webpackJsonp([6],{
 
 /***/ }),
 
-/***/ 74:
+/***/ 78:
 /***/ (function(module, exports) {
 
 	module.exports = "<div class=\"modal close\">\n    <div class=\"modal-container\">\n        <div class=\"modal-header\">\n            {{#isUpdate}}\n            <h1 class=\"modal-title\">更新地址</h1>\n            {{/isUpdate}}\n            {{^isUpdate}}\n            <h1 class=\"modal-title\">使用新地址</h1>\n            {{/isUpdate}}\n            <i class=\"fa fa-close close\"></i>\n        </div>\n        <div class=\"modal-body\">\n            <div class=\"form\">\n                <div class=\"form-line\">\n                    <label class=\"label\" for=\"receiver-name\">\n                        <span class=\"required\">*</span>收件人姓名\n                    </label>\n                    <input type=\"text\" class=\"form-item\" id=\"receiver-name\"\n                           placeholder=\"请输入收件人姓名\" value=\"{{data.receiverName}}\"/>\n                </div>\n                <div class=\"form-line\">\n                    <label class=\"label\" for=\"receiver-province\">\n                        <span class=\"required\">*</span>所在城市\n                    </label>\n                    <select id=\"receiver-province\" class=\"form-item\">\n                        <option value=\"\">请选择</option>\n                    </select>\n                    <select id=\"receiver-city\" class=\"form-item\">\n                        <option value=\"\">请选择</option>\n                    </select>\n                </div>\n                <div class=\"form-line\">\n                    <label class=\"label\" for=\"receiver-address\">\n                        <span class=\"required\">*</span>详细地址\n                    </label>\n                    <input type=\"text\" class=\"form-item\" id=\"receiver-address\"\n                           placeholder=\"请精确到门牌号\" value=\"{{data.receiverAddress}}\"/>\n                </div>\n                <div class=\"form-line\">\n                    <label class=\"label\" for=\"receiver-phone\">\n                        <span class=\"required\">*</span>收件人手机\n                    </label>\n                    <input type=\"text\" class=\"form-item\" id=\"receiver-phone\"\n                           placeholder=\"请输入11位手机号\" value=\"{{data.receiverPhone}}\"/>\n                </div>\n                <div class=\"form-line\">\n                    <label class=\"label\" for=\"receiver-zip\">邮政编码</label>\n                    <input type=\"text\" class=\"form-item\" id=\"receiver-zip\"\n                           placeholder=\"如：100000\" value=\"{{data.receiverZip}}\"/>\n                </div>\n                <div class=\"form-line\">\n                    <input type=\"hidden\" id=\"receiver-id\" value=\"{{data.id}}\" />\n                    <a class=\"btn address-btn\">保存</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";

@@ -1,60 +1,57 @@
-webpackJsonp([10],{
+webpackJsonp([11],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(88);
+	module.exports = __webpack_require__(92);
 
 
 /***/ }),
 
-/***/ 88:
+/***/ 92:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-19 21:52:46
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-19 23:01:25
-	*/
-
 	'use strict';
-	__webpack_require__(89);
-	__webpack_require__(91);
+	__webpack_require__(93);
+	__webpack_require__(95);
 	var _mm = __webpack_require__(8);
-
-	$(function(){
+	$(function () {
 	    var type        = _mm.getUrlParam('type') || 'default',
 	        $element    = $('.' + type + '-success');
-	    // 显示对应的提示元素
+	    if(type === 'payment'){
+	        var orderNumber = _mm.getUrlParam('orderNumber'),
+	            $orderNumber = $element.find('.order-number');
+	        $orderNumber.attr('href',$orderNumber.attr('href') + orderNumber);
+	    }
+	    if(type === 'comment-add'){
+	        var productId = _mm.getUrlParam('productId'),
+	            $product_Id = $element.find('.product-id');
+	        $product_Id.attr('href',$product_Id.attr('href') + productId);
+	    }
+	    //显示对应的提示元素
 	    $element.show();
-	})
+	});
 
 /***/ }),
 
-/***/ 89:
+/***/ 93:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 91:
+/***/ 95:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-17 11:26:25
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-17 11:26:46
-	*/
+	
 
 	'use strict';
-	__webpack_require__(92);
+	__webpack_require__(96);
 
 /***/ }),
 
-/***/ 92:
+/***/ 96:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

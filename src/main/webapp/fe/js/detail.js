@@ -1,21 +1,17 @@
-webpackJsonp([3],[
-/* 0 */
+webpackJsonp([4],{
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(35);
+	module.exports = __webpack_require__(40);
 
 
 /***/ }),
-/* 1 */,
-/* 2 */
+
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-18 19:30:12
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-27 19:46:42
-	*/
+	
 
 	'use strict';
 	__webpack_require__(3);
@@ -64,29 +60,18 @@ webpackJsonp([3],[
 	header.init();
 
 /***/ }),
-/* 3 */
+
+/***/ 3:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */
+
+/***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-17 14:17:01
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-22 12:21:05
-	*/
+	
 
 	'use strict';
 	__webpack_require__(13);
@@ -141,22 +126,16 @@ webpackJsonp([3],[
 	module.exports = nav.init();
 
 /***/ }),
-/* 13 */
+
+/***/ 13:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 14 */,
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: WillGiab
-	* @Date:   2017-06-14 00:40:04
-	* @Last Modified by:   WillGiab
-	* @Last Modified time: 2017-06-14 11:43:26
-	*/
+/***/ 15:
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -276,15 +255,9 @@ webpackJsonp([3],[
 	module.exports = _user;
 
 /***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: 0284
-	* @Date:   2017-06-14 11:46:02
-	* @Last Modified by:   0284
-	* @Last Modified time: 2017-06-14 11:50:09
-	*/
+/***/ 16:
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -378,43 +351,73 @@ webpackJsonp([3],[
 	module.exports = _cart;
 
 /***/ }),
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-28 19:45:49
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-29 18:39:01
-	*/
+/***/ 24:
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	__webpack_require__(36);
+	var _mm = __webpack_require__(8);
+
+	var _product = {
+	    // 获取商品列表
+	    getProductList : function(listParam, resolve, reject){
+	        _mm.request({
+	            url     : _mm.getServerUrl('/product/list.do'),
+	            data    : listParam,
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
+	    // 获取商品详细信息
+	    getProductDetail : function(productId, resolve, reject){
+	        _mm.request({
+	            url     : _mm.getServerUrl('/product/detail.do'),
+	            data    : {
+	                productId : productId
+	            },
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
+	    // 获取商品详细信息
+	    getCommentList : function(productId, resolve, reject){
+	        _mm.request({
+	            url     : _mm.getServerUrl('/product/commentList.do'),
+	            data    : {
+	                productId : productId
+	            },
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
+	    // 提交评价
+	    addComment : function(commentInfo, resolve, reject){
+	        _mm.request({
+	            url     : _mm.getServerUrl('/product/addComment.do'),
+	            data    : commentInfo,
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
+	};
+	module.exports = _product;
+
+/***/ }),
+
+/***/ 40:
+/***/ (function(module, exports, __webpack_require__) {
+
+	
+	'use strict';
+
+	__webpack_require__(41);
 	__webpack_require__(12);
 	__webpack_require__(2);
 	var _mm             = __webpack_require__(8);
-	var _product        = __webpack_require__(38);
+	var _product        = __webpack_require__(24);
 	var _cart           = __webpack_require__(16);
-	var templateIndex   = __webpack_require__(39);
+	var templateIndex   = __webpack_require__(43);
 
 	var page = {
 	    data : {
@@ -430,6 +433,7 @@ webpackJsonp([3],[
 	            _mm.goHome();
 	        }
 	        this.loadDetail();
+
 	    },
 	    bindEvent : function(){
 	        var _this = this;
@@ -463,6 +467,18 @@ webpackJsonp([3],[
 	                _mm.errorTips(errMsg);
 	            });
 	        });
+	        //对点击商品详情和商品评价的处理
+	        $(document).on('click', '.tab-item', function(){
+	            $(this).addClass('active')
+	                .siblings('.tab-item').removeClass('active'); 
+	            if($(this).text()=="商品评价"){
+	                $('.comment-con').show();
+	                $('.detail-con').hide();
+	            }else{
+	                $('.comment-con').hide();
+	                $('.detail-con').show();
+	            }
+	        });
 	    },
 	    // 加载商品详情的数据
 	    loadDetail : function(){
@@ -476,12 +492,28 @@ webpackJsonp([3],[
 	            _this.filter(res);
 	            // 缓存住detail的数据
 	            _this.data.detailInfo = res;
+	            _product.getCommentList(this.data.productId, function(res2){
+	            // render
+	            res.commentList=res2.list;
 	            // render
 	            html = _mm.renderHtml(templateIndex, res);
 	            $pageWrap.html(html);
+	            }, function(errMsg){
+	                $pageWrap.html('<p class="err-tip">此商品找不到了</p>');
+	            });
 	        }, function(errMsg){
-	            $pageWrap.html('<p class="err-tip">此商品太淘气，找不到了</p>');
+	            $pageWrap.html('<p class="err-tip">此商品找不到了</p>');
 	        });
+	    },
+	    // 加载商品评价的数据
+	    loadComment : function(){
+	        var _this       = this,
+	            html        = '',
+	            $pageWrap   = $('.page-wrap');
+	        // loading
+	        $pageWrap.html('<div class="loading"></div>');
+	        // 请求detail信息
+	        
 	    },
 	    // 数据匹配
 	    filter : function(data){
@@ -493,56 +525,19 @@ webpackJsonp([3],[
 	})
 
 /***/ }),
-/* 36 */
+
+/***/ 41:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 37 */,
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-27 18:26:52
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-29 16:54:03
-	*/
-
-	'use strict';
-
-	var _mm = __webpack_require__(8);
-
-	var _product = {
-	    // 获取商品列表
-	    getProductList : function(listParam, resolve, reject){
-	        _mm.request({
-	            url     : _mm.getServerUrl('/product/list.do'),
-	            data    : listParam,
-	            success : resolve,
-	            error   : reject
-	        });
-	    },
-	    // 获取商品详细信息
-	    getProductDetail : function(productId, resolve, reject){
-	        _mm.request({
-	            url     : _mm.getServerUrl('/product/detail.do'),
-	            data    : {
-	                productId : productId
-	            },
-	            success : resolve,
-	            error   : reject
-	        });
-	    }
-	};
-	module.exports = _product;
-
-/***/ }),
-/* 39 */
+/***/ 43:
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"intro-wrap\">\n    <div class=\"p-img-con\">\n        <div class=\"main-img-con\">\n            <img class=\"main-img\" src=\"{{imageHost}}{{mainImage}}\" alt=\"{{name}}\"/>\n        </div>\n        <ul class=\"p-img-list\">\n            {{#subImages}}\n            <li class=\"p-img-item\">\n                <img class=\"p-img\" src=\"{{imageHost}}{{.}}\" alt=\"{{name}}\" />\n            </li>\n            {{/subImages}}\n        </ul>\n    </div>\n    <div class=\"p-info-con\">\n        <h1 class=\"p-name\">{{name}}</h1>\n        <p class=\"p-subtitle\">{{subtitle}}</p>\n        <div class=\"p-info-item p-price-con\">\n            <span class=\"label\">价格:</span>\n            <span class=\"info\">￥{{price}}</span>\n        </div>\n        <div class=\"p-info-item\">\n            <span class=\"label\">库存:</span>\n            <span class=\"info\">{{stock}}</span>\n        </div>\n        <div class=\"p-info-item p-count-con\">\n            <span class=\"label\">数量:</span>\n            <input class=\"p-count\" value=\"1\" readonly=\"\"/>\n            <span class=\"p-count-btn plus\">+</span>\n            <span class=\"p-count-btn minus\">-</span>\n        </div>\n        <div class=\"p-info-item\">\n            <a class=\"btn cart-add\">加入购物车</a>\n        </div>\n    </div>\n</div>\n<div class=\"detail-wrap\">\n    <div class=\"detail-tab-con\">\n        <ul class=\"tab-list\">\n            <li class=\"tab-item active\">详细描述</li>\n        </ul>\n    </div>\n    <div class=\"detail-con\">\n        {{{detail}}}\n    </div>\n</div>";
+	module.exports = "<div class=\"intro-wrap\">\n    <div class=\"p-img-con\">\n        <div class=\"main-img-con\">\n            <img class=\"main-img\" src=\"{{imageHost}}{{mainImage}}\" alt=\"{{name}}\"/>\n        </div>\n        <ul class=\"p-img-list\">\n            {{#subImages}}\n            <li class=\"p-img-item\">\n                <img class=\"p-img\" src=\"{{imageHost}}{{.}}\" alt=\"{{name}}\" />\n            </li>\n            {{/subImages}}\n        </ul>\n    </div>\n    <div class=\"p-info-con\">\n        <h1 class=\"p-name\">{{name}}</h1>\n        <p class=\"p-subtitle\">{{subtitle}}</p>\n        <div class=\"p-info-item p-price-con\">\n            <span class=\"label\">价格:</span>\n            <span class=\"info\">￥{{price}}</span>\n        </div>\n        <div class=\"p-info-item\">\n            <span class=\"label\">库存:</span>\n            <span class=\"info\">{{stock}}</span>\n        </div>\n        <div class=\"p-info-item p-count-con\">\n            <span class=\"label\">数量:</span>\n            <input class=\"p-count\" value=\"1\" readonly=\"\"/>\n            <span class=\"p-count-btn plus\">+</span>\n            <span class=\"p-count-btn minus\">-</span>\n        </div>\n        <div class=\"p-info-item\">\n            <a class=\"btn cart-add\">加入购物车</a>\n        </div>\n    </div>\n</div>\n<div class=\"detail-wrap\">\n    <div class=\"detail-tab-con\">\n        <ul class=\"tab-list\">\n            <li class=\"tab-item active\">商品详情</li>\n            <li class=\"tab-item\">商品评价</li>\n        </ul>\n    </div>\n    <div class=\"detail-con\">\n        {{{detail}}}\n    </div>\n    <div class=\"comment-con\">\n       <div class=\"panel-body\">\n        <table class=\"comment-table\">\n            <tr>\n                <th class=\"cell-th cell-info\">用户名</th>\n                <th class=\"cell-th cell-price\">评价</th>\n                <th class=\"cell-th cell-count\">评价时间</th>\n            </tr>\n            {{#commentList}}\n            <tr>\n                <td class=\"cell cell-uname\">\n                    {{userName}}\n                </td>\n                <td class=\"cell cell-comment\">\n                    {{comment}}\n                </td>\n                <td class=\"cell cell-time\">\n                    {{createTime}}\n                </td>\n            </tr>\n            {{/commentList}}\n        </table>\n    </div>\n    </div>\n</div>";
 
 /***/ })
-]);
+
+});

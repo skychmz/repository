@@ -1,9 +1,4 @@
-/*
-* @Author: Rosen
-* @Date:   2017-05-18 19:30:20
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-23 20:03:49
-*/
+
 /* 通用头部导航 */
 
 .header .logo{
@@ -67,12 +62,7 @@
     .crumb{
     font-size: 35px;
 }
-}/*
-* @Author: Rosen
-* @Date:   2017-05-17 14:16:54
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-17 16:31:15
-*/
+}
 .nav{
     background: #eee;
     height: 30px;
@@ -106,18 +96,8 @@
     display: inline-block;
     margin-left: 5px;
 }
-/*
-* @Author: eshop
-* @Date:   2017-05-27 18:04:22
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-29 16:44:22
-*/
 /* 排序按钮 */
-@media (max-width: 500px){
-    .sort-con{
-    font-size: 25px;
-    }
-}
+
 .sort-con{
     overflow: auto;
 }
@@ -135,8 +115,8 @@
     cursor: pointer;
 }
 .sort-con .sort-item.active{
-    background: #c60023;
-    border: 1px solid #c60023;
+    background: #6495ed;
+    border: 1px solid #6495ed;
     color: #fff;
 }
 .sort-con .sort-item .fa-sort-desc{
@@ -201,17 +181,35 @@
     text-align: center;
     background: #eee;
 }
-@media(max-width: 500px){
+
+@media (max-width: 500px){
+    .sort-con{
+    font-size: 25px;
+    }
     .err-tip{
     font-size: 50px;
 }
-}/*
-* @Author: Rosen
-* @Date:   2017-05-28 11:58:18
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-28 15:38:37
-*/
-.pg-content{
+.p-list-con .p-item .p-img-con {
+    width: 300px;
+    height: 280px;
+}
+.p-list-con .p-item {
+    width: 300px;
+    height: 380px;
+}
+.p-list-con .p-item .p-price-con .p-price {
+    font-size: 40px;
+}
+.p-list-con .p-item .p-price-con {
+    height: 45px;
+}
+.p-list-con .p-item .p-name-con {
+    height: 48px;
+}
+.p-list-con .p-item .p-name-con .p-name {
+    font-size: 25px;
+}
+}.pg-content{
     text-align: center;
     color: #333;
 }

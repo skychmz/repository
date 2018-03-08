@@ -1,9 +1,4 @@
-/*
-* @Author: Rosen
-* @Date:   2017-05-17 11:26:31
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-23 20:04:16
-*/
+
 .nav-simple{
     height: 60px;
     line-height: 60px;
@@ -15,13 +10,7 @@
     font-weight: bold;
     color: #5CACEE;
     text-decoration: none;
-}/*
-* @Author: Rosen
-* @Date:   2017-05-22 09:09:04
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-22 09:09:22
-*/
-/* 最外层容器 */
+}/* 最外层容器 */
 .page-wrap{
     padding: 40px 0;
     background: #6495ed;

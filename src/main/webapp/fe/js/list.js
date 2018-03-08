@@ -1,9 +1,9 @@
-webpackJsonp([5],{
+webpackJsonp([6],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(57);
+	module.exports = __webpack_require__(61);
 
 
 /***/ }),
@@ -11,12 +11,7 @@ webpackJsonp([5],{
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-18 19:30:12
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-27 19:46:42
-	*/
+	
 
 	'use strict';
 	__webpack_require__(3);
@@ -76,12 +71,7 @@ webpackJsonp([5],{
 /***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-17 14:17:01
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-22 12:21:05
-	*/
+	
 
 	'use strict';
 	__webpack_require__(13);
@@ -146,13 +136,6 @@ webpackJsonp([5],{
 
 /***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: WillGiab
-	* @Date:   2017-06-14 00:40:04
-	* @Last Modified by:   WillGiab
-	* @Last Modified time: 2017-06-14 11:43:26
-	*/
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -276,13 +259,6 @@ webpackJsonp([5],{
 /***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: 0284
-	* @Date:   2017-06-14 11:46:02
-	* @Last Modified by:   0284
-	* @Last Modified time: 2017-06-14 11:50:09
-	*/
-
 	'use strict';
 	var _mm = __webpack_require__(8);
 
@@ -376,15 +352,8 @@ webpackJsonp([5],{
 
 /***/ }),
 
-/***/ 38:
+/***/ 24:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-27 18:26:52
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-29 16:54:03
-	*/
 
 	'use strict';
 
@@ -410,30 +379,43 @@ webpackJsonp([5],{
 	            success : resolve,
 	            error   : reject
 	        });
-	    }
+	    },
+	    // 获取商品详细信息
+	    getCommentList : function(productId, resolve, reject){
+	        _mm.request({
+	            url     : _mm.getServerUrl('/product/commentList.do'),
+	            data    : {
+	                productId : productId
+	            },
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
+	    // 提交评价
+	    addComment : function(commentInfo, resolve, reject){
+	        _mm.request({
+	            url     : _mm.getServerUrl('/product/addComment.do'),
+	            data    : commentInfo,
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
 	};
 	module.exports = _product;
 
 /***/ }),
 
-/***/ 57:
+/***/ 61:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: eshop
-	* @Date:   2017-05-27 17:57:49
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-28 19:48:16
-	*/
-
 	'use strict';
-	__webpack_require__(58);
+	__webpack_require__(62);
 	__webpack_require__(12);
 	__webpack_require__(2);
 	var _mm             = __webpack_require__(8);
-	var _product        = __webpack_require__(38);
-	var Pagination      = __webpack_require__(60);
-	var templateIndex   = __webpack_require__(64);
+	var _product        = __webpack_require__(24);
+	var Pagination      = __webpack_require__(64);
+	var templateIndex   = __webpack_require__(68);
 
 	var page = {
 	    data : {
@@ -536,27 +518,20 @@ webpackJsonp([5],{
 
 /***/ }),
 
-/***/ 58:
+/***/ 62:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 60:
+/***/ 64:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-28 11:58:08
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-28 15:36:16
-	*/
-
 	'use strict';
-	__webpack_require__(61);
+	__webpack_require__(65);
 	var _mm                 = __webpack_require__(8);
-	var templatePagination  = __webpack_require__(63);
+	var templatePagination  = __webpack_require__(67);
 
 	var Pagination = function(){
 	    var _this = this;
@@ -633,21 +608,21 @@ webpackJsonp([5],{
 
 /***/ }),
 
-/***/ 61:
+/***/ 65:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 63:
+/***/ 67:
 /***/ (function(module, exports) {
 
 	module.exports = "<div class=\"pg-content\">\n    {{#pageArray}}\n    {{#disabled}}\n        <span class=\"pg-item disabled\" data-value=\"{{value}}\">{{name}}</span>\n    {{/disabled}}\n    {{^disabled}}\n        {{#active}}\n            <span class=\"pg-item active\" data-value=\"{{value}}\">{{name}}</span>\n        {{/active}}\n        {{^active}}\n            <span class=\"pg-item\" data-value=\"{{value}}\">{{name}}</span>\n        {{/active}}\n    {{/disabled}}\n    {{/pageArray}}\n    <span class=\"pg-total\">{{pageNum}} / {{pages}}</span>\n</div>";
 
 /***/ }),
 
-/***/ 64:
+/***/ 68:
 /***/ (function(module, exports) {
 
 	module.exports = "{{#list}}\n    <li class=\"p-item\">\n        <div class=\"p-img-con\">\n            <a class=\"link\" href=\"./detail.html?productId={{id}}\" target=\"_blank\">\n                <img class=\"p-img\" src=\"{{imageHost}}{{mainImage}}\" alt=\"{{name}}\" />\n            </a>\n        </div>\n        <div class=\"p-price-con\">\n            <span class=\"p-price\">￥{{price}}</span>\n        </div>\n        <div class=\"p-name-con\">\n            <a class=\"p-name\" href=\"./detail.html?productId={{id}}\" target=\"_blank\">{{name}}</a>\n        </div>\n    </li>\n{{/list}}\n{{^list}}\n    <p class=\"err-tip\">很抱歉，实在找不到您要的商品。</p>\n{{/list}}";

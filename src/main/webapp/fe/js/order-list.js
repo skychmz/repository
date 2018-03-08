@@ -1,9 +1,9 @@
-webpackJsonp([8],{
+webpackJsonp([9],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(79);
+	module.exports = __webpack_require__(83);
 
 
 /***/ }),
@@ -11,12 +11,7 @@ webpackJsonp([8],{
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-18 19:30:12
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-27 19:46:42
-	*/
+	
 
 	'use strict';
 	__webpack_require__(3);
@@ -76,12 +71,7 @@ webpackJsonp([8],{
 /***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-17 14:17:01
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-22 12:21:05
-	*/
+	
 
 	'use strict';
 	__webpack_require__(13);
@@ -146,13 +136,6 @@ webpackJsonp([8],{
 
 /***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: WillGiab
-	* @Date:   2017-06-14 00:40:04
-	* @Last Modified by:   WillGiab
-	* @Last Modified time: 2017-06-14 11:43:26
-	*/
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -276,13 +259,6 @@ webpackJsonp([8],{
 /***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: 0284
-	* @Date:   2017-06-14 11:46:02
-	* @Last Modified by:   0284
-	* @Last Modified time: 2017-06-14 11:50:09
-	*/
-
 	'use strict';
 	var _mm = __webpack_require__(8);
 
@@ -376,19 +352,13 @@ webpackJsonp([8],{
 
 /***/ }),
 
-/***/ 47:
+/***/ 51:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-19 17:39:14
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-24 16:46:02
-	*/
 	'use strict';
-	__webpack_require__(48);
+	__webpack_require__(52);
 	var _mm             = __webpack_require__(8);
-	var templateIndex   = __webpack_require__(50);
+	var templateIndex   = __webpack_require__(54);
 	// 侧边导航
 	var navSide = {
 	    option : {
@@ -426,34 +396,27 @@ webpackJsonp([8],{
 
 /***/ }),
 
-/***/ 48:
+/***/ 52:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 50:
+/***/ 54:
 /***/ (function(module, exports) {
 
 	module.exports = "{{#navList}}\n{{#isActive}}\n<li class=\"nav-item active\">\n{{/isActive}}\n{{^isActive}}\n<li class=\"nav-item\">\n{{/isActive}}\n    <a class=\"link\" href=\"{{href}}\">{{desc}}</a>\n</li>\n{{/navList}}";
 
 /***/ }),
 
-/***/ 60:
+/***/ 64:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-28 11:58:08
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-28 15:36:16
-	*/
-
 	'use strict';
-	__webpack_require__(61);
+	__webpack_require__(65);
 	var _mm                 = __webpack_require__(8);
-	var templatePagination  = __webpack_require__(63);
+	var templatePagination  = __webpack_require__(67);
 
 	var Pagination = function(){
 	    var _this = this;
@@ -530,26 +493,22 @@ webpackJsonp([8],{
 
 /***/ }),
 
-/***/ 61:
+/***/ 65:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 63:
+/***/ 67:
 /***/ (function(module, exports) {
 
 	module.exports = "<div class=\"pg-content\">\n    {{#pageArray}}\n    {{#disabled}}\n        <span class=\"pg-item disabled\" data-value=\"{{value}}\">{{name}}</span>\n    {{/disabled}}\n    {{^disabled}}\n        {{#active}}\n            <span class=\"pg-item active\" data-value=\"{{value}}\">{{name}}</span>\n        {{/active}}\n        {{^active}}\n            <span class=\"pg-item\" data-value=\"{{value}}\">{{name}}</span>\n        {{/active}}\n    {{/disabled}}\n    {{/pageArray}}\n    <span class=\"pg-total\">{{pageNum}} / {{pages}}</span>\n</div>";
 
 /***/ }),
 
-/***/ 68:
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/**
-	 * Created by weimin on 2017/7/13 0013.
-	 */
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -608,23 +567,19 @@ webpackJsonp([8],{
 
 /***/ }),
 
-/***/ 79:
+/***/ 83:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/**
-	 * Created by weimin on 2017/7/13 0013.
-	 */
-
 	'use strict';
-	__webpack_require__(80);
+	__webpack_require__(84);
 	__webpack_require__(12);
-	__webpack_require__(21);
+	__webpack_require__(26);
 	__webpack_require__(2);
-	var navSide       = __webpack_require__(47);
+	var navSide       = __webpack_require__(51);
 	var _mm           = __webpack_require__(8);
-	var _order        = __webpack_require__(68);
-	var Pagination    = __webpack_require__(60);
-	var templateIndex = __webpack_require__(82);
+	var _order        = __webpack_require__(72);
+	var Pagination    = __webpack_require__(64);
+	var templateIndex = __webpack_require__(86);
 
 	// page 逻辑部分
 	var page = {
@@ -692,14 +647,14 @@ webpackJsonp([8],{
 
 /***/ }),
 
-/***/ 80:
+/***/ 84:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 82:
+/***/ 86:
 /***/ (function(module, exports) {
 
 	module.exports = "<table class=\"order-list-table\">\n    <tr>\n        <th class=\"cell cell-img\">&nbsp;</th>\n        <th class=\"cell cell-info\">商品信息</th>\n        <th class=\"cell cell-price\">单价</th>\n        <th class=\"cell cell-count\">数量</th>\n        <th class=\"cell cell-total\">小计</th>\n    </tr>\n</table>\n{{#list}}\n<table class=\"order-list-table order-item\">\n    <tr>\n        <td colspan=\"5\" class=\"order-info\">\n                                <span class=\"order-text\">\n                                    <span>订单号</span>\n                                    <a href=\"order-detail.html?orderNumber={{orderNo}}\"\n                                       class=\"link order-num\" target=\"_blank\">{{orderNo}}</a>\n                                </span>\n            <span class=\"order-text\">{{createTime}}</span>\n            <span class=\"order-text\">收件人：{{receiverName}}</span>\n            <span class=\"order-text\">订单状态：{{statusDesc}}</span>\n            <span class=\"order-text\">\n                                    <span>订单总价：</span>\n                                    <span class=\"order-total\">￥{{payment}}</span>\n                                </span>\n            <a href=\"order-detail.html?orderNumber={{orderNo}}\" class=\"link order-detail\">查看详情></a>\n        </td>\n    </tr>\n    {{#orderItemVoList}}\n    <tr>\n        <td class=\"cell cell-img\">\n            <a href=\"./detail.html?productId={{productId}}\" target=\"_blank\" class=\"link\">\n                <img src=\"{{imageHost}}{{productImage}}\" alt=\"{{productName}}\" class=\"p-img\"/>\n            </a>\n        </td>\n        <td class=\"cell cell-info\">{{productName}}</td>\n        <td class=\"cell cell-price\">￥{{currentUnitPrice}}</td>\n        <td class=\"cell cell-count\">{{quantity}}</td>\n        <td class=\"cell cell-total\">￥{{totalPrice}}</td>\n    </tr>\n    {{/orderItemVoList}}\n</table>\n{{/list}}\n{{^list}}\n<p class=\"err-tip\">暂时没有订单</p>\n{{/list}}";

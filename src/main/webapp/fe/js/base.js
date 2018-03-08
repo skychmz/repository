@@ -32,7 +32,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		2:0
+/******/ 		3:0
 /******/ 	};
 
 /******/ 	// The require function
@@ -78,7 +78,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".js/" + ({"0":"about","1":"cart","3":"detail","4":"index","5":"list","6":"order-confirm","7":"order-detail","8":"order-list","9":"payment","10":"result","11":"user-center","12":"user-center-update","13":"user-login","14":"user-pass-reset","15":"user-pass-update","16":"user-register"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".js/" + ({"0":"about","1":"cart","2":"comment-add","4":"detail","5":"index","6":"list","7":"order-confirm","8":"order-detail","9":"order-list","10":"payment","11":"result","12":"user-center","13":"user-center-update","14":"user-login","15":"user-pass-reset","16":"user-pass-update","17":"user-register"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -101,20 +101,13 @@
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(21);
+	module.exports = __webpack_require__(26);
 
 
 /***/ }),
 
 /***/ 8:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-15 15:26:38
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-21 14:58:37
-	*/
 
 	'use strict';
 	var Hogan = __webpack_require__(9);
@@ -177,7 +170,7 @@
 	    },
 	    // 错误提示
 	    errorTips : function(msg){
-	        alert(msg || '哪里不对了~');
+	        alert(msg || '未知错误');
 	    },
 	    // 字段的验证，支持非空、手机、邮箱的判断
 	    validate : function(value, type){
@@ -1014,40 +1007,35 @@
 
 /***/ }),
 
-/***/ 21:
+/***/ 26:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-09 16:48:55
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-17 21:20:30
-	*/
+	
 
 	'use strict';
 
-	__webpack_require__(22);
-	__webpack_require__(25);
-	__webpack_require__(33);
+	__webpack_require__(27);
+	__webpack_require__(30);
+	__webpack_require__(38);
 
 
 /***/ }),
 
-/***/ 22:
+/***/ 27:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 25:
+/***/ 30:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 33:
+/***/ 38:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

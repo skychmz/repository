@@ -1,9 +1,4 @@
-/*
-* @Author: Rosen
-* @Date:   2017-05-18 19:30:20
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-23 20:03:49
-*/
+
 /* 通用头部导航 */
 
 .header .logo{
@@ -67,12 +62,7 @@
     .crumb{
     font-size: 35px;
 }
-}/*
-* @Author: Rosen
-* @Date:   2017-05-17 14:16:54
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-17 16:31:15
-*/
+}
 .nav{
     background: #eee;
     height: 30px;
@@ -106,12 +96,7 @@
     display: inline-block;
     margin-left: 5px;
 }
-/*
-* @Author: Rosen
-* @Date:   2017-05-09 17:16:19
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-26 19:25:17
-*/
+
 
 /* keywords-list */
 .keywords-list{
@@ -137,7 +122,7 @@
     color: #fff;
 }
 .keywords-list .keywords-item .link:hover{
-    color: #c60023;
+    color: #6495ed;
 }
 
 /* banner-con */
@@ -243,13 +228,7 @@
     .floor-wrap .floor-list .floor-item .floor-text{
         font-size: 25px;
     }
-}/*
-* @Author: Rosen
-* @Date:   2017-05-26 18:19:21
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-26 19:12:42
-*/
-/* banner */
+}/* banner */
 .banner{
     position: relative; 
     overflow: auto; 
@@ -285,12 +264,7 @@
 .banner .dots li.active {
     background: #fff;
     opacity: 1;
-}/*
-* @Author: Rosen
-* @Date:   2017-05-19 17:39:34
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-19 19:48:20
-*/
+}
 /* 导航主体 */
 .nav-side{
     float: left;

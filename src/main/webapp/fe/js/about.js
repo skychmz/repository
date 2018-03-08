@@ -9,12 +9,7 @@ webpackJsonp([0],[
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-06-13 19:17:44
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-06-13 19:18:13
-	*/
+	
 
 	'use strict';
 
@@ -26,12 +21,7 @@ webpackJsonp([0],[
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-18 19:30:12
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-27 19:46:42
-	*/
+	
 
 	'use strict';
 	__webpack_require__(3);
@@ -97,12 +87,7 @@ webpackJsonp([0],[
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-17 14:17:01
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-22 12:21:05
-	*/
+	
 
 	'use strict';
 	__webpack_require__(13);
@@ -166,13 +151,6 @@ webpackJsonp([0],[
 /* 14 */,
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: WillGiab
-	* @Date:   2017-06-14 00:40:04
-	* @Last Modified by:   WillGiab
-	* @Last Modified time: 2017-06-14 11:43:26
-	*/
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -294,13 +272,6 @@ webpackJsonp([0],[
 /***/ }),
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: 0284
-	* @Date:   2017-06-14 11:46:02
-	* @Last Modified by:   0284
-	* @Last Modified time: 2017-06-14 11:50:09
-	*/
 
 	'use strict';
 	var _mm = __webpack_require__(8);

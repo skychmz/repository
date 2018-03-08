@@ -1,9 +1,9 @@
-webpackJsonp([9],{
+webpackJsonp([10],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(83);
+	module.exports = __webpack_require__(87);
 
 
 /***/ }),
@@ -11,12 +11,7 @@ webpackJsonp([9],{
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-18 19:30:12
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-27 19:46:42
-	*/
+	
 
 	'use strict';
 	__webpack_require__(3);
@@ -76,12 +71,7 @@ webpackJsonp([9],{
 /***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: Rosen
-	* @Date:   2017-05-17 14:17:01
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-05-22 12:21:05
-	*/
+	
 
 	'use strict';
 	__webpack_require__(13);
@@ -146,13 +136,6 @@ webpackJsonp([9],{
 
 /***/ 15:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: WillGiab
-	* @Date:   2017-06-14 00:40:04
-	* @Last Modified by:   WillGiab
-	* @Last Modified time: 2017-06-14 11:43:26
-	*/
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -276,13 +259,6 @@ webpackJsonp([9],{
 /***/ 16:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/*
-	* @Author: 0284
-	* @Date:   2017-06-14 11:46:02
-	* @Last Modified by:   0284
-	* @Last Modified time: 2017-06-14 11:50:09
-	*/
-
 	'use strict';
 	var _mm = __webpack_require__(8);
 
@@ -376,20 +352,16 @@ webpackJsonp([9],{
 
 /***/ }),
 
-/***/ 83:
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
-	/**
-	 * Created by weimin on 2017/7/14 0014.
-	 */
-
 	'use strict';
-	__webpack_require__(84);
+	__webpack_require__(88);
 	__webpack_require__(12);
 	__webpack_require__(2);
 	var _mm           = __webpack_require__(8);
-	var _payment      = __webpack_require__(86);
-	var templateIndex = __webpack_require__(87);
+	var _payment      = __webpack_require__(90);
+	var templateIndex = __webpack_require__(91);
 
 	var page = {
 	    data      : {
@@ -437,22 +409,15 @@ webpackJsonp([9],{
 
 /***/ }),
 
-/***/ 84:
+/***/ 88:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 86:
+/***/ 90:
 /***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: Rosen
-	* @Date:   2017-06-10 20:28:03
-	* @Last Modified by:   Rosen
-	* @Last Modified time: 2017-06-10 20:35:25
-	*/
 
 	'use strict';
 	var _mm = __webpack_require__(8);
@@ -485,7 +450,7 @@ webpackJsonp([9],{
 
 /***/ }),
 
-/***/ 87:
+/***/ 91:
 /***/ (function(module, exports) {
 
 	module.exports = "<p class=\"payment-tips\">订单提交成功，请尽快支付！订单号：{{orderNo}}</p>\n<p class=\"payment-tips enhance\">请使用支付宝APP扫描下方二维码进行支付</p>\n<div class=\"img-con\">\n    <img src=\"{{qrUrl}}\" alt=\"支付二维码\" class=\"qr-code\"/>\n</div>";
