@@ -80,7 +80,7 @@
             <!--<columnOverride column="detail" jdbcType="VARCHAR" />-->
             <!--<columnOverride column="sub_images" jdbcType="VARCHAR" />-->
         <!--</table>-->
-        <!--<table tableName="eshop_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+        <table tableName="eshop_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
 
         <table tableName="eshop_comment" domainObjectName="Comment" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
         <!-- mybatis插件的搭建 -->

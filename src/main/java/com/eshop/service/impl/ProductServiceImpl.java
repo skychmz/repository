@@ -138,9 +138,6 @@ public class ProductServiceImpl implements IProductService {
         return productListVo;
     }
     public ServerResponse<PageInfo> getProductList(int pageNum,int pageSize){
-        //startPage--start
-        //填充自己的sql查询逻辑
-        //pageHelper-收尾
         PageHelper.startPage(pageNum,pageSize);
         List<Product> productList = productMapper.selectList();
 
@@ -192,7 +189,6 @@ public class ProductServiceImpl implements IProductService {
         if(categoryId != null){
             Category category = categoryMapper.selectByPrimaryKey(categoryId);
             if(category == null && StringUtils.isBlank(keyword)){
-                //没有该分类,并且还没有关键字,这个时候返回一个空的结果集,不报错
                 PageHelper.startPage(pageNum,pageSize);
                 List<ProductListVo> productListVoList = Lists.newArrayList();
                 PageInfo pageInfo = new PageInfo(productListVoList);

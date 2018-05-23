@@ -37,7 +37,6 @@ public class OrderManageController {
 
         }
         if(iUserService.checkAdminRole(user).isSuccess()){
-            //填充我们增加产品的业务逻辑
             return iOrderService.manageList(pageNum,pageSize);
         }else{
             return ServerResponse.createByErrorMessage("无权限操作");
@@ -54,8 +53,6 @@ public class OrderManageController {
 
         }
         if(iUserService.checkAdminRole(user).isSuccess()){
-            //填充我们增加产品的业务逻辑
-
             return iOrderService.manageDetail(orderNo);
         }else{
             return ServerResponse.createByErrorMessage("无权限操作");
@@ -74,7 +71,6 @@ public class OrderManageController {
 
         }
         if(iUserService.checkAdminRole(user).isSuccess()){
-            //填充我们增加产品的业务逻辑
             return iOrderService.manageSearch(orderNo,pageNum,pageSize);
         }else{
             return ServerResponse.createByErrorMessage("无权限操作");
@@ -93,7 +89,6 @@ public class OrderManageController {
 
         }
         if(iUserService.checkAdminRole(user).isSuccess()){
-            //填充我们增加产品的业务逻辑
             return iOrderService.manageSendGoods(orderNo);
         }else{
             return ServerResponse.createByErrorMessage("无权限操作");
