@@ -1,14 +1,15 @@
 package com.eshop.common;
 
-import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.ShardedJedis;
 
 /**
- * Created by ed on 2018/7/10.
+ * Created by ed on 2018/7/11.
  */
 @Slf4j
 public class RedisPoolUtil {
+
     /**
      * 设置key的有效期，单位是秒
      * @param key
@@ -91,4 +92,6 @@ public class RedisPoolUtil {
         RedisPool.returnResource(jedis);
         return result;
     }
+
+
 }
