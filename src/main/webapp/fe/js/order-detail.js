@@ -530,7 +530,7 @@ webpackJsonp([8],{
 	    dataFilter : function(data){
 	        data.needPay        = data.status == 10;
 	        data.isCancelable   = data.status == 10;
-	        data.isPayed        = data.status == 20;
+	        data.isPayed        = data.status >= 20;
 
 	    }
 	};

@@ -168,27 +168,27 @@
 .floor-wrap .floor-title{
     height: 50px;
     line-height: 50px;
-    color: #d58717;
+    color: #6495ed;
     font-weight: normal;
     font-size: 20px;
-    border-bottom: 1px solid #d58717;
+    border-bottom: 1px solid #6495ed;
 }
 /* 更改各楼层标题颜色 */
 .floor-wrap:nth-child(2) .floor-title{
-    color: #3b838c;
-    border-bottom: 1px solid #3b838c;
+    color: #6495ed;
+    border-bottom: 1px solid #6495ed;
 }
 .floor-wrap:nth-child(3) .floor-title{
-    color: #a93931;
-    border-bottom: 1px solid #a93931;
+    color: #6495ed;
+    border-bottom: 1px solid #6495ed;
 }
 .floor-wrap:nth-child(4) .floor-title{
-    color: #488bad;
-    border-bottom: 1px solid #488bad;
+    color: #6495ed;
+    border-bottom: 1px solid #6495ed;
 }
 .floor-wrap:nth-child(5) .floor-title{
-    color: #642663;
-    border-bottom: 1px solid #642663;
+    color: #6495ed;
+    border-bottom: 1px solid #6495ed;
 }
 .floor-wrap .floor-list{
     margin-right: -20px;

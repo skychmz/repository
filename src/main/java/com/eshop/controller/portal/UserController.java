@@ -1,8 +1,6 @@
 package com.eshop.controller.portal;
 
-import com.eshop.common.Const;
-import com.eshop.common.ResponseCode;
-import com.eshop.common.ServerResponse;
+import com.eshop.common.*;
 import com.eshop.pojo.User;
 import com.eshop.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -20,18 +21,22 @@ public class UserController {
     private IUserService iUserService;
     @RequestMapping(value = "login.do",method= RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<User> login(String username, String password, HttpSession session){//登录
+    public ServerResponse<User> login(String username, String password, HttpSession session, HttpServletResponse httpServletResponse){//登录
         ServerResponse<User> response=iUserService.login(username,password);
         if (response.isSuccess()){
-            session.setAttribute(Const.CURRENT_USER,response.getData());
+            //session.setAttribute(Const.CURRENT_USER,response.getData());
+            CookieUtil.writeLoginToken(httpServletResponse,session.getId());
+            RedisPoolUtil.setEx(session.getId(), JsonUtil.obj2String(response.getData()),Const.RedisCacheExtime.REDIS_SESSION_EXTIME);
         }
         return response;
     }
 
     @RequestMapping(value = "logout.do",method= RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<String> logout(HttpSession session){
-        session.removeAttribute(Const.CURRENT_USER);
+    public ServerResponse<String> logout(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+        //session.removeAttribute(Const.CURRENT_USER);
+        String loginToken = CookieUtil.readLoginToken(httpServletRequest);
+        CookieUtil.delLoginToken(httpServletRequest,httpServletResponse);
         return ServerResponse.createBySuccess();
     }
 

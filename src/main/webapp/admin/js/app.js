@@ -776,13 +776,6 @@ module.exports = invariant;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-24 10:47:04
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-13 15:58:04
-*/
-
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -796,7 +789,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var conf = {
-
     serverHost: '',
     imageHost: 'http://img.eshop.com/'
 };
@@ -875,7 +867,7 @@ var MMUtil = function () {
     }, {
         key: 'errorTips',
         value: function errorTips(msg) {
-            alert(msg || '哪里不对了~');
+            alert(msg || '未知错误');
         }
         // 向本地存储里放数据
 
@@ -1512,12 +1504,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-11 20:06:59
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-02-24 21:06:43
-*/
 
 
 
@@ -3153,13 +3139,6 @@ module.exports = ReactElement;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-24 10:35:19
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-09 23:43:37
-*/
-
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -3256,6 +3235,7 @@ var Product = function () {
         key: 'saveCategory',
         value: function saveCategory(category) {
             return _mm.request({
+                method:'POST',
                 url: _mm.getServerUrl('/manage/category/add_category.do'),
                 data: {
                     parentId: category.parentId || 0,
@@ -3269,6 +3249,7 @@ var Product = function () {
         key: 'updateCategoryName',
         value: function updateCategoryName(category) {
             return _mm.request({
+                method:'POST',
                 url: _mm.getServerUrl('/manage/category/set_category_name.do'),
                 data: category
             });
@@ -9070,13 +9051,6 @@ return Module;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-28 11:40:05
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-02-28 11:55:19
-*/
-
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -9117,13 +9091,6 @@ exports.default = Pagination;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-04-05 11:07:34
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-05 17:47:33
-*/
-
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -9202,13 +9169,6 @@ exports.default = Order;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-24 15:49:17
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-13 15:59:59
-*/
-
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -15194,13 +15154,6 @@ module.exports = getIteratorFn;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-09 12:19:54
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-09 22:44:21
-*/
-
 
 // react
 
@@ -15339,13 +15292,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-16 19:15:55
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-03-02 21:22:03
-*/
-
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -15408,12 +15354,6 @@ exports.default = FileUploader;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-11 18:49:48
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-04 20:04:53
-*/
 
 
 
@@ -15539,12 +15479,6 @@ exports.default = SideNav;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-11 19:49:01
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-13 16:05:51
-*/
 
 
 
@@ -15658,12 +15592,6 @@ exports.default = TopNav;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-18 10:47:31
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-03-02 13:14:47
-*/
 
 
 
@@ -15741,13 +15669,6 @@ exports.default = RichEditor;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-03-11 10:11:47
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-03-11 10:24:24
-*/
-
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -15825,13 +15746,6 @@ exports.default = ProductCategory;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-23 18:16:59
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-02-24 10:17:27
-*/
-
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -15892,12 +15806,6 @@ exports.default = ErrorPage;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2016-11-06 12:39:33
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-02-15 21:14:25
-*/
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -15954,12 +15862,7 @@ exports.default = Home;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-09 12:26:03
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-02-24 20:07:25
-*/
+
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -16017,13 +15920,6 @@ exports.default = Layout;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2016-11-06 12:39:33
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-13 15:44:13
-*/
-
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -16158,12 +16054,6 @@ exports.default = Login;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-04-04 20:03:01
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-05 23:32:40
-*/
 
 
 
@@ -16467,12 +16357,6 @@ exports.default = OrderDetail;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-11 19:03:18
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-05 23:22:47
-*/
 
 
 
@@ -16746,12 +16630,7 @@ exports.default = OrderList;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-15 20:34:22
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-04 19:46:28
-*/
+
 
 
 Object.defineProperty(exports, "__esModule", {
@@ -16917,12 +16796,6 @@ exports.default = ProductCategoryAdd;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-11 18:46:37
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-09 23:48:17
-*/
 
 
 
@@ -17128,12 +17001,6 @@ exports.default = ProductCategory;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-28 14:53:59
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-13 15:33:03
-*/
 
 
 
@@ -17482,12 +17349,6 @@ exports.default = ProductDetail;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-11 18:46:37
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-09 23:36:03
-*/
 
 
 
@@ -17805,12 +17666,6 @@ exports.default = ProductList;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-13 10:22:06
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-04-13 15:36:53
-*/
 
 
 
@@ -18319,12 +18174,6 @@ exports.default = ProductSave;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/*
-* @Author: Rosen
-* @Date:   2017-02-11 19:03:26
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-02-12 11:36:24
-*/
 
 
 

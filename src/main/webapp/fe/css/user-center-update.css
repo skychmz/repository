@@ -141,3 +141,17 @@
     width: 200px;
     font-size: 14px;
 }
+@media(max-width: 500px){
+    .form-line .label {
+    font-size: 30px;
+    width: 180px;
+}
+.form-line {
+    font-size: 30px;
+}
+.form-line .input {
+    height: 30px;
+    width: 300px;
+    font-size: 25px;
+}
+}
