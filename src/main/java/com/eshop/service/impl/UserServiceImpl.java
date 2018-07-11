@@ -1,8 +1,8 @@
 package com.eshop.service.impl;
 
 import com.eshop.common.Const;
+import com.eshop.common.RedisPoolUtil;
 import com.eshop.common.ServerResponse;
-import com.eshop.common.TokenCache;
 import com.eshop.dao.UserMapper;
 import com.eshop.pojo.User;
 import com.eshop.service.IUserService;
@@ -88,7 +88,7 @@ public class UserServiceImpl implements IUserService {
         int resultCount=userMapper.checkAnswer(username, question, answer);
         if(resultCount>0){
             String forgetToken= UUID.randomUUID().toString();
-            TokenCache.setKey(TokenCache.TOKEN_PREFIX+username,forgetToken);
+            RedisPoolUtil.setEx(Const.TOKEN_PREFIX+username,forgetToken,60*60*12);
             return ServerResponse.createBySuccess(forgetToken);
         }
         return ServerResponse.createByErrorMessage("问题的答案错误");
@@ -102,7 +102,7 @@ public class UserServiceImpl implements IUserService {
         if(validResponse.isSuccess()){
             return ServerResponse.createByErrorMessage("用户不存在");
         }
-        String token = TokenCache.getKey(TokenCache.TOKEN_PREFIX+username);
+        String token = RedisPoolUtil.get(Const.TOKEN_PREFIX+username);
         if(StringUtils.isBlank(forgetToken)){
             return ServerResponse.createByErrorMessage("token无效或者过期");
         }
