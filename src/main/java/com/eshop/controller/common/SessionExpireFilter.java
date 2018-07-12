@@ -1,5 +1,9 @@
-package com.eshop.common;
+package com.eshop.controller.common;
 
+import com.eshop.common.Const;
+import com.eshop.common.CookieUtil;
+import com.eshop.common.JsonUtil;
+import com.eshop.common.RedisShardedPoolUtil;
 import com.eshop.pojo.User;
 import org.apache.commons.lang3.StringUtils;
 
@@ -19,12 +23,12 @@ public class SessionExpireFilter implements Filter{
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest=(HttpServletRequest) servletRequest;
-        String loginToken =CookieUtil.readLoginToken(httpServletRequest);
+        String loginToken = CookieUtil.readLoginToken(httpServletRequest);
         if(StringUtils.isNoneEmpty(loginToken)){
             String userJsonStr= RedisShardedPoolUtil.get(loginToken);
-            User user=JsonUtil.string2Obj(userJsonStr,User.class);
+            User user= JsonUtil.string2Obj(userJsonStr,User.class);
             if(user!=null){
-                RedisShardedPoolUtil.expire(loginToken,Const.RedisCacheExtime.REDIS_SESSION_EXTIME);
+                RedisShardedPoolUtil.expire(loginToken, Const.RedisCacheExtime.REDIS_SESSION_EXTIME);
             }
         }
         filterChain.doFilter(servletRequest,servletResponse);
